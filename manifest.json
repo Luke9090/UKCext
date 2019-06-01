@@ -1,0 +1,12 @@
+{
+  "name": "UKC like/dislike hider",
+  "version": "1.0",
+  "description": "Hides the like/dislike buttons on UKClimbing Forum threads",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+        "matches": ["*://www.ukclimbing.com/forums/*"],
+        "js": ["/content_script.js"]
+    }
+  ]
+}
