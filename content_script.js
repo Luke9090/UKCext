@@ -1,5 +1,5 @@
 
-chrome.storage.local.get(['show'], function(result) {
+chrome.storage.sync.get(['show'], function(result) {
 	var showVal = (result.show===undefined) ? 2 : result.show;
 	
 	if (showVal===1) {
@@ -16,7 +16,7 @@ chrome.storage.local.get(['show'], function(result) {
 	}
 });
 
-chrome.storage.local.get(['userList'], function(result) {
+chrome.storage.sync.get(['userList'], function(result) {
 	var blocked = (result.userList===undefined) ? "" : result.userList;
 	var userRegex = /\d{3,7}(?!\w)/;
 	
