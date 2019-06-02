@@ -1,17 +1,27 @@
-function loadOptions() {
-    console.log("loading options");
-	document.getElementById("showChoice").selectedIndex = chrome.storage.sync.get(['showVal'], function(result) {
-        return result.showVal;
-      });;
-}
-
-function saveOptions() {
-    console.log("saving options");
-    var value = document.getElementById("showChoice").selectedIndex;
-    chrome.storage.sync.set({showVal: value}, function() {
-        console.log('Value is set to ' + value);
+// Saves options to chrome.storage
+function save_options() {
+    var showVal = document.getElementById('showChoice').selectedIndex;
+    chrome.storage.local.set({
+      show: showVal,
+    }, function() {
+      // Update status to let user know options were saved.
+      var status = document.getElementById('status');
+      status.textContent = 'Options saved.';
+      setTimeout(function() {
+        status.textContent = '';
+      }, 750);
     });
-}
-
-document.addEventListener('DOMContentLoaded', loadOptions);
-document.getElementById('save').addEventListener('click', saveOptions);
+  }
+  
+  // Restores select box and checkbox state using the preferences
+  // stored in chrome.storage.
+  function restore_options() {
+    // Use default value color = 'red' and likesColor = true.
+    chrome.storage.local.get({
+      show: 2,
+    }, function(items) {
+      document.getElementById('showChoice').selectedIndex = items.show;
+    });
+  }
+  document.addEventListener('DOMContentLoaded', restore_options);
+  document.getElementById('save').addEventListener('click', save_options);

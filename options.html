@@ -1,29 +1,23 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <title>Options for UKC Forum Tweaks</title>
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
-	<script type="text/javascript" src="options.js"></script>
-</head>
+<head><title>UKC Forum Tweaker Options</title></head>
 <body>
-    <h1>UKC Forum Tweaks - Options</h1>
-    <h2>Like/Dislike Button Options</h2>
-    <form>
-        <p>What would you like to show?</p>
-        <select id="showChoice">
-          <option>All likes/dislikes</option>
-          <!--<option>Buttons only (numbers hidden)</option>-->
-          <option>Likes only (dislikes hidden)</option>
-          <option>No likes/dislikes at all</option>
-        </select>
-    </form>
-    <button id='save'>Save</button>
-    <!--
-    <h2>Blocked Users</h2>
-    <p>Enter ID numbers of users you would like to block, separated by a comma.</p>
-	<input type="text" id="userIDs" name="userIDs" value="">
-    <p>You can find a user's ID number by clicking on their name and copying the five-digit code from the end of the URL e.g. www.ukclimbing.com/user/profile.php?id=<b>73673</b></p>
-    <p><b>N.B.</b> All this does is hide some users' posts when you view threads on this browser with the extension installed, it doesn't hide the posts on other computers nor does it stop the "blocked" users from seeing your posts or contacting you. If you are being harassed by another UKC user, I would suggesting contacting UKC directly.</p>
-    <br />
-    -->
+
+<h1>UKC Forum Tweaker - Options</h1>
+<h2>Like/Dislike Buttons</h2>
+<p>What would you like to hide?</p>
+<select id="showChoice">
+ <option value="Hide nothing">Hide nothing</option>
+ <option value="Hide dislikes">Hide dislikes only</option>
+ <option value="Hide both">Hide both likes and dislikes</option>
+</select>
+
+<br />
+<br />
+
+<button id="save">Save</button>
+<div id="status" style="display:inline-block;"></div>
+
+<script src="options.js"></script>
 </body>
 </html>
