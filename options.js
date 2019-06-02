@@ -1,8 +1,10 @@
 // Saves options to chrome.storage
 function save_options() {
     var showVal = document.getElementById('showChoice').selectedIndex;
+    var blocked = document.getElementById('userIDs').value;
     chrome.storage.local.set({
       show: showVal,
+      userList: blocked,
     }, function() {
       // Update status to let user know options were saved.
       var status = document.getElementById('status');
@@ -19,8 +21,10 @@ function save_options() {
     // Use default value color = 'red' and likesColor = true.
     chrome.storage.local.get({
       show: 2,
+      userList: "",
     }, function(items) {
       document.getElementById('showChoice').selectedIndex = items.show;
+      document.getElementById('userIDs').value = items.userList;
     });
   }
   document.addEventListener('DOMContentLoaded', restore_options);

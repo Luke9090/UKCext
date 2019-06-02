@@ -1,6 +1,6 @@
 {
   "name": "UKC Forum Tweaks",
-  "version": "2.0",
+  "version": "3.0",
   "description": "Offers options to hide like/dislike buttons and posts from certain users on UKClimbing Forum threads.",
   "manifest_version": 2,
   "options_ui": {
